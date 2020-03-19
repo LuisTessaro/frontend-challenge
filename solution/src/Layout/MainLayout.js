@@ -26,6 +26,12 @@ function MainLayout({
 
 								<div className="dashboard-container">
 									<Header logged={false} />
+									<Component
+										history={history}
+										logged={false}
+										location={location}
+										{...rest}
+									/>
 								</div>
 							</div>
 						</main>
