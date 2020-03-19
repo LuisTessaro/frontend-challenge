@@ -1,0 +1,29 @@
+@import "../../Styles/styleguide.scss";
+
+header.header {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: $padding;
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        margin-left: $margin;
+        a {
+          font-weight: 500;
+          color: $main;
+        }
+        a:hover {
+          text-decoration: underline;
+          color: darken($main, 10%);
+        }
+      }
+      li.active {
+        text-decoration: underline;
+        color: darken($main, 10%);
+      }
+    }
+  }
+}
