@@ -1,10 +1,12 @@
 import React from 'react'
+import Router from './Router'
 
 import './Styles/main.scss'
 
 function App() {
   return (
     <div className="App">
+				<Router />
 
     </div>
   )
