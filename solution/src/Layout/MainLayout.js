@@ -3,13 +3,30 @@ import { Route, withRouter, Redirect } from 'react-router-dom'
 
 import Header from '../Components/Header'
 
+import EditModal from '../Components/EditModal'
+import { useModal } from '../Hooks/useModal'
+
 function MainLayout({
 	component: Component,
 	location,
 	history,
 	...rest
 }) {
+	const path = location.pathname
+	const token = localStorage.getItem('auth_token')
+	const logged = token ? true : false
 
+	const editModal = useModal()
+	
+	if (logged) {
+		if (path === '/login') {
+			return <Redirect to="/" />
+		}
+	} else {
+		if (path === '/' || path === '/new') {
+			return <Redirect to="/login" />
+		}
+	}
 	return (
 		<Route
 			{...rest}
@@ -25,16 +42,17 @@ function MainLayout({
 								</div>
 
 								<div className="dashboard-container">
-									<Header logged={false} />
+									<Header logged={logged} />
 									<Component
 										history={history}
-										logged={false}
+										logged={logged}
 										location={location}
 										{...rest}
 									/>
 								</div>
 							</div>
 						</main>
+						<EditModal {...editModal.getProps()} />
 					</div>
 				)
 			}}

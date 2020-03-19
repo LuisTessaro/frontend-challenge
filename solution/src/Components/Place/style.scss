@@ -1,0 +1,33 @@
+@import "../../Styles/styleguide.scss";
+
+.place {
+  margin-bottom: $margin;
+  .place-flex-container {
+    padding: $padding;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $margin;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .edit-button {
+        cursor: pointer;
+        background-color: $main;
+        i{
+          color: white;
+          padding: 10px;
+        }
+      }
+      .edit-button:hover {
+        background-color: darken($main, 10%);
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@import "../../Styles/styleguide.scss";
+
+.modal.modal-open {
+  margin-top: 0;
+  opacity: 1;
+  pointer-events: inherit;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .modal-background {
+    opacity: 1;
+  }
+}
+
+.modal {
+  pointer-events: none;
+  display: hidden;
+  opacity: 0;
+  transition: margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  border-radius: 5px;
+  
+  width: 40%;
+
+  .modal-background {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    width: 99%;
+    height: 100%;
+    position: relative;
+    padding: $padding;
+
+    transform: translate(80%, 10%);
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $margin;
+      h1 {
+        color: $main;
+      }
+      i {
+        font-size: 20px;
+        color: $danger;
+        cursor: pointer;
+      }
+    }
+    .modal-body {
+      .edit-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+
+        input[type="submit"] {
+          width: 100%;
+          color: $white;
+          background-color: darken($complement, 25%);
+          padding: 14px 20px;
+          border: none;
+          font-size: 2rem;
+          cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+          background-color: darken($complement, 35%);
+        }
+
+        .form-group {
+          position: relative;
+          margin-bottom: $margin;
+          width: 100%;
+          input {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            padding: 20px 15px;
+            font-size: 20px;
+            margin-bottom: 5px;
+          }
+          label {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            z-index: 2;
+            background-color: $white;
+            transform: translateY(-50%);
+            font-weight: 500;
+            font-size: 14px;
+          }
+          h5 {
+            color: #ff675c;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
