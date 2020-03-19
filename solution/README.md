@@ -13,4 +13,5 @@ Front End PlanD challenge using React and Sass.
 ## Usage
 ```git clone repository
 cd solution
-npm start```
+npm start
+```
