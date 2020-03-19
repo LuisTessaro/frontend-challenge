@@ -11,7 +11,8 @@ Front End PlanD challenge using React and Sass.
 - [x] Error Handling
  
 ## Usage
-```git clone repository
+```
+git clone repository
 cd solution
 npm start
 ```
